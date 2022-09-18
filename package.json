@@ -3,8 +3,8 @@
     "scripts": {
         "dev": "node scripts/setup_assets.js --check && vite",
         "pull": "node scripts/setup_assets.js",
-        "build:deps": "cd external && cd components && yarn && yarn build:esm && cd .. && cd revolt.js && yarn && yarn build",
-        "build": "yarn && rimraf build && node scripts/setup_assets.js --check && yarn build:deps && vite build",
+        "build:deps": "yarn workspaces foreach -pt run build",
+        "build": "rimraf build && node scripts/setup_assets.js --check && vite build",
         "build:highmem": "NODE_OPTIONS='--max-old-space-size=4096' yarn build",
         "preview": "vite preview",
         "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
@@ -76,7 +76,7 @@
         "@hcaptcha/react-hcaptcha": "^0.3.6",
         "@insertish/vite-plugin-babel-macros": "^1.0.5",
         "@preact/preset-vite": "^2.0.0",
-        "@revoltchat/ui": "^1.0.77",
+        "@revoltchat/ui": "workspace:*",
         "@rollup/plugin-replace": "^2.4.2",
         "@styled-icons/boxicons-logos": "^10.38.0",
         "@styled-icons/boxicons-regular": "^10.38.0",
@@ -102,6 +102,7 @@
         "@typescript-eslint/eslint-plugin": "^4.27.0",
         "@typescript-eslint/parser": "^4.27.0",
         "@vitejs/plugin-legacy": "^1.7.1",
+        "axios": "^0.27.2",
         "classnames": "^2.3.1",
         "color-rgba": "^2.4.0",
         "dayjs": "^1.10.6",
@@ -144,7 +145,7 @@
         "remark-math": "^5.1.1",
         "remark-parse": "^10.0.1",
         "remark-rehype": "^10.1.0",
-        "revolt.js": "6.0.17",
+        "revolt.js": "workspace:*",
         "rimraf": "^3.0.2",
         "sass": "^1.35.1",
         "semver": "^7.3.7",
@@ -168,8 +169,9 @@
     "author": "Paul <paulmakles@gmail.com>",
     "license": "MIT",
     "packageManager": "yarn@3.2.0",
-    "resolutions": {
-        "@revoltchat/ui": "portal:external/components",
-        "revolt.js": "portal:external/revolt.js"
+    "workspaces": {
+        "packages": [
+            "packages/*"
+        ]
     }
 }

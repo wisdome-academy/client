@@ -1,9 +1,9 @@
 [submodule "external/lang"]
 	path = external/lang
 	url = https://github.com/revoltchat/translations
-[submodule "external/components"]
-	path = external/components
+[submodule "packages/components"]
+	path = packages/components
 	url = https://github.com/revoltchat/components
-[submodule "external/revolt.js"]
-	path = external/revolt.js
+[submodule "packages/revolt.js"]
+	path = packages/revolt.js
 	url = https://github.com/revoltchat/revolt.js
