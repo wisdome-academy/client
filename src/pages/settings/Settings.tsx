@@ -145,11 +145,7 @@ export default observer(() => {
                     icon: <IdCard size={20} />,
                     title: <Text id="app.settings.pages.profile.title" />,
                 },
-                {
-                    id: "sessions",
-                    icon: <CheckShield size={20} />,
-                    title: <Text id="app.settings.pages.sessions.title" />,
-                },
+
                 {
                     category: (
                         <Text id="app.settings.categories.client_settings" />
@@ -174,38 +170,18 @@ export default observer(() => {
                     icon: <Bell size={20} />,
                     title: <Text id="app.settings.pages.notifications.title" />,
                 },
+
                 {
                     id: "language",
                     icon: <Globe size={20} />,
                     title: <Text id="app.settings.pages.language.title" />,
                 },
-                {
-                    id: "sync",
-                    icon: <SyncIcon size={20} />,
-                    title: <Text id="app.settings.pages.sync.title" />,
-                },
+
                 {
                     id: "native",
                     hidden: !window.isNative,
                     icon: <Desktop size={20} />,
                     title: <Text id="app.settings.pages.native.title" />,
-                },
-                {
-                    id: "experiments",
-                    icon: <Flask size={20} />,
-                    title: <Text id="app.settings.pages.experiments.title" />,
-                },
-                {
-                    divider: true,
-                    category: "revolt",
-                    id: "bots",
-                    icon: <Bot size={20} />,
-                    title: <Text id="app.settings.pages.bots.title" />,
-                },
-                {
-                    id: "feedback",
-                    icon: <Megaphone size={20} />,
-                    title: <Text id="app.settings.pages.feedback.title" />,
                 },
             ]}
             children={
@@ -213,11 +189,7 @@ export default observer(() => {
                     <Route path="/settings/profile">
                         <Profile />
                     </Route>
-                    <Route path="/settings/sessions">
-                        <RequiresOnline>
-                            <Sessions />
-                        </RequiresOnline>
-                    </Route>
+
                     <Route path="/settings/appearance">
                         <Appearance />
                     </Route>
@@ -230,24 +202,15 @@ export default observer(() => {
                     <Route path="/settings/notifications">
                         <Notifications />
                     </Route>
+
                     <Route path="/settings/language">
                         <Languages />
                     </Route>
-                    <Route path="/settings/sync">
-                        <Sync />
-                    </Route>
+
                     <Route path="/settings/native">
                         <Native />
                     </Route>
-                    <Route path="/settings/experiments">
-                        <ExperimentsPage />
-                    </Route>
-                    <Route path="/settings/bots">
-                        <MyBots />
-                    </Route>
-                    <Route path="/settings/feedback">
-                        <Feedback />
-                    </Route>
+
                     <Route path="/">
                         <Account />
                     </Route>
@@ -258,32 +221,6 @@ export default observer(() => {
             category="pages"
             custom={
                 <>
-                    <ButtonItem
-                        compact
-                        onClick={() =>
-                            modalController.push({ type: "changelog" })
-                        }>
-                        <ListUl size={20} />
-                        <Text id="app.special.modals.changelogs.title" />
-                    </ButtonItem>
-                    <a
-                        href="https://github.com/revoltchat"
-                        target="_blank"
-                        rel="noreferrer">
-                        <ButtonItem compact>
-                            <Github size={20} />
-                            <Text id="app.settings.pages.source_code" />
-                        </ButtonItem>
-                    </a>
-                    <a
-                        href="https://insrt.uk/donate"
-                        target="_blank"
-                        rel="noreferrer">
-                        <ButtonItem className={styles.donate} compact>
-                            <Coffee size={20} />
-                            <Text id="app.settings.pages.donate.title" />
-                        </ButtonItem>
-                    </a>
                     <LineDivider compact />
                     <ButtonItem
                         onClick={clientController.logoutCurrent}
@@ -292,38 +229,6 @@ export default observer(() => {
                         <LogOut size={20} />
                         <Text id="app.settings.pages.logOut" />
                     </ButtonItem>
-                    <div className={styles.version}>
-                        <span className={styles.revision}>
-                            <a
-                                href={`${REPO_URL}/${GIT_REVISION}`}
-                                target="_blank"
-                                rel="noreferrer">
-                                {GIT_REVISION.substr(0, 7)}
-                            </a>
-                            {` `}
-                            <a
-                                href={
-                                    GIT_BRANCH !== "DETACHED"
-                                        ? `https://github.com/revoltchat/revite/tree/${GIT_BRANCH}`
-                                        : undefined
-                                }
-                                target="_blank"
-                                rel="noreferrer">
-                                ({GIT_BRANCH})
-                            </a>
-                        </span>
-                        <span>
-                            {GIT_BRANCH === "production" ? "Stable" : "Nightly"}{" "}
-                            {APP_VERSION}
-                        </span>
-                        {window.isNative && (
-                            <span>Native: {window.nativeVersion}</span>
-                        )}
-                        <span>
-                            API: {client.configuration?.revolt ?? "N/A"}
-                        </span>
-                        <span>revolt.js: {LIBRARY_VERSION}</span>
-                    </div>
                 </>
             }
             indexHeader={

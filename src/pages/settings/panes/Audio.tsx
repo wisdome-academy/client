@@ -224,10 +224,6 @@ export function Audio() {
                 </div>
             </div>
             <hr />
-            <div className={styles.opus}>
-                <img height="20" src={opusSVG} draggable={false} />
-                Audio codec powered by Opus
-            </div>
         </>
     );
 }

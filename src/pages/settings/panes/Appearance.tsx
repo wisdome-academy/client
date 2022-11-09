@@ -15,22 +15,9 @@ export const Appearance = observer(() => {
         <div className={styles.appearance}>
             <ThemeSelection />
             <hr />
-            <AppearanceOptions />
-            <hr />
+
             <ChatOptions />
             <hr />
-            <CollapsibleSection
-                defaultValue={false}
-                id="settings_overrides"
-                summary={<Text id="app.settings.pages.appearance.overrides" />}>
-                <ThemeOverrides />
-            </CollapsibleSection>
-            <CollapsibleSection
-                id="settings_advanced_appearance"
-                defaultValue={false}
-                summary={<Text id="app.settings.pages.appearance.advanced" />}>
-                <AdvancedOptions />
-            </CollapsibleSection>
         </div>
     );
 });

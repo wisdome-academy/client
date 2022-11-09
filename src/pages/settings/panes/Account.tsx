@@ -20,15 +20,6 @@ export function Account() {
 
             <AccountManagement />
             <hr />
-
-            <Tip>
-                <span>
-                    <Text id="app.settings.tips.account.a" />
-                </span>{" "}
-                <Link to="/settings/profile" replace>
-                    <Text id="app.settings.tips.account.b" />
-                </Link>
-            </Tip>
         </div>
     );
 }

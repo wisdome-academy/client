@@ -172,19 +172,7 @@ export const Profile = observer(() => {
                 onFocus={onFocus}
                 onBlur={onBlur}
             />
-            <div className={styles.markdown}>
-                <Markdown size="24" />
-                <h5>
-                    Descriptions support Markdown formatting,{" "}
-                    <a
-                        href="https://developers.revolt.chat/markdown"
-                        target="_blank"
-                        rel="noreferrer">
-                        learn more here
-                    </a>
-                    .
-                </h5>
-            </div>
+
             <p>
                 <Button
                     palette="secondary"
@@ -198,16 +186,6 @@ export const Profile = observer(() => {
                     <Text id="app.special.modals.actions.save" />
                 </Button>
             </p>
-
-            <LineDivider />
-            <Tip>
-                <span>
-                    Want to change your username?{" "}
-                    <a onClick={() => switchPage("account")}>
-                        Head over to your account settings.
-                    </a>
-                </span>
-            </Tip>
         </div>
     );
 });

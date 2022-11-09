@@ -182,34 +182,6 @@ export const Languages = observer(() => {
             <div className={styles.list}>
                 {languages.filter(([, lang]) => !lang.cat).map(EntryFactory)}
             </div>
-            <h3>
-                <Text id="app.settings.pages.language.const" />
-            </h3>
-            <div className={styles.list}>
-                {languages
-                    .filter(([, lang]) => lang.cat === "const")
-                    .map(EntryFactory)}
-            </div>
-            <h3>
-                <Text id="app.settings.pages.language.other" />
-            </h3>
-            <div className={styles.list}>
-                {languages
-                    .filter(([, lang]) => lang.cat === "alt")
-                    .map(EntryFactory)}
-            </div>
-            <LineDivider />
-            <Tip>
-                <span>
-                    <Text id="app.settings.tips.languages.a" />{" "}
-                    <a
-                        href="https://weblate.insrt.uk/engage/revolt/?utm_source=widget"
-                        target="_blank"
-                        rel="noreferrer">
-                        <Text id="app.settings.tips.languages.b" />
-                    </a>
-                </span>
-            </Tip>
         </div>
     );
 });

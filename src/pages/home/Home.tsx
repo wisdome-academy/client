@@ -51,7 +51,7 @@ export default observer(() => {
         state.settings.set("appearance:seasonal", !seasonalTheme);
 
     const isDecember = !isTouchscreenDevice && new Date().getMonth() === 11;
-    const isOctober = !isTouchscreenDevice && new Date().getMonth() === 9
+    const isOctober = !isTouchscreenDevice && new Date().getMonth() === 9;
     const snowflakes = useMemo(() => {
         const flakes = [];
 
@@ -90,15 +90,6 @@ export default observer(() => {
     return (
         <div className={styles.home}>
             <Overlay>
-                {seasonalTheme && (
-                    <div className="snowfall">
-                        {snowflakes.map((emoji, index) => (
-                            <div key={index} className="snowflake">
-                                {emoji}
-                            </div>
-                        ))}
-                    </div>
-                )}
                 <div className="content">
                     <PageHeader icon={<HomeIcon size={24} />} withTransparency>
                         <Text id="app.navigation.tabs.home" />
@@ -107,7 +98,7 @@ export default observer(() => {
                         <h3>
                             <Text id="app.special.modals.onboarding.welcome" />
                             <br />
-                            <img src={wideSVG} />
+                            <br />
                         </h3>
                         <div className={styles.actions}>
                             <a
@@ -125,68 +116,7 @@ export default observer(() => {
                                     <Text id="app.home.group" />
                                 </CategoryButton>
                             </a>
-                            <Link to="/discover">
-                                <a>
-                                    <CategoryButton
-                                        action="chevron"
-                                        icon={<Compass size={32} />}
-                                        description={
-                                            <Text id="app.home.discover_desc" />
-                                        }>
-                                        <Text id="app.home.discover" />
-                                    </CategoryButton>
-                                </a>
-                            </Link>
 
-                            {client.servers.get(
-                                "01F7ZSBSFHQ8TA81725KQCSDDP",
-                            ) ? (
-                                <Link to="/server/01F7ZSBSFHQ8TA81725KQCSDDP">
-                                    <CategoryButton
-                                        action="chevron"
-                                        icon={<RightArrowCircle size={32} />}
-                                        description={
-                                            <Text id="app.home.goto-testers_desc" />
-                                        }>
-                                        <Text id="app.home.goto-testers" />
-                                    </CategoryButton>
-                                </Link>
-                            ) : (
-                                <Link to="/invite/Testers">
-                                    <CategoryButton
-                                        action="chevron"
-                                        icon={<Group size={32} />}
-                                        description={
-                                            <Text id="app.home.join-testers_desc" />
-                                        }>
-                                        <Text id="app.home.join-testers" />
-                                    </CategoryButton>
-                                </Link>
-                            )}
-
-                            <Link to="/settings/feedback">
-                                <CategoryButton
-                                    action="chevron"
-                                    icon={<Megaphone size={32} />}
-                                    description={
-                                        <Text id="app.home.feedback_desc" />
-                                    }>
-                                    <Text id="app.home.feedback" />
-                                </CategoryButton>
-                            </Link>
-                            <a
-                                href="https://insrt.uk/donate"
-                                target="_blank"
-                                rel="noreferrer">
-                                <CategoryButton
-                                    action="external"
-                                    description={
-                                        <Text id="app.home.donate_desc" />
-                                    }
-                                    icon={<Money size={32} />}>
-                                    <Text id="app.home.donate" />
-                                </CategoryButton>
-                            </a>
                             <Link to="/settings">
                                 <CategoryButton
                                     action="chevron"

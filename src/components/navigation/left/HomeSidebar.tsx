@@ -115,16 +115,7 @@ export default observer(() => {
                         </span>
                     </ButtonItem>
                 </ConditionalLink>
-                {import.meta.env.DEV && (
-                    <Link to="/dev">
-                        <ButtonItem active={pathname === "/dev"}>
-                            <Wrench size={20} />
-                            <span>
-                                <Text id="app.navigation.tabs.dev" />
-                            </span>
-                        </ButtonItem>
-                    </Link>
-                )}
+          
                 <Category>
                     <Text id="app.main.categories.conversations" />
                     <IconButton
@@ -174,7 +165,7 @@ export default observer(() => {
                         </ConditionalLink>
                     );
                 })}
-                <PaintCounter />
+                
             </GenericSidebarList>
         </GenericSidebarBase>
     );
