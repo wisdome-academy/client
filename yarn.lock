@@ -2299,25 +2299,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@revoltchat/ui@portal:external/components::locator=client%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@revoltchat/ui@portal:external/components::locator=client%40workspace%3A."
-  dependencies:
-    "@styled-icons/boxicons-logos": ^10.38.0
-    "@styled-icons/boxicons-regular": ^10.38.0
-    "@styled-icons/boxicons-solid": ^10.38.0
-    "@tippyjs/react": ^4.2.6
-    mobx: ^6.6.0
-    mobx-react-lite: ^3.4.0
-    prismjs: ^1.28.0
-    react-beautiful-dnd: ^13.1.0
-    react-device-detect: ^2.2.2
-    react-virtuoso: ^2.12.0
-  peerDependencies:
-    revolt.js: "*"
-  languageName: node
-  linkType: soft
-
 "@rollup/plugin-babel@npm:^5.2.0":
   version: 5.3.0
   resolution: "@rollup/plugin-babel@npm:5.3.0"
