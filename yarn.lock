@@ -2299,6 +2299,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@revoltchat/ui@portal:external/components::locator=client%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@revoltchat/ui@portal:external/components::locator=client%40workspace%3A."
+  dependencies:
+    "@styled-icons/boxicons-logos": ^10.38.0
+    "@styled-icons/boxicons-regular": ^10.38.0
+    "@styled-icons/boxicons-solid": ^10.38.0
+    "@tippyjs/react": ^4.2.6
+    mobx: ^6.6.0
+    mobx-react-lite: ^3.4.0
+    prismjs: ^1.28.0
+    react-beautiful-dnd: ^13.1.0
+    react-device-detect: ^2.2.2
+    react-virtuoso: ^2.12.0
+  peerDependencies:
+    revolt.js: "*"
+  languageName: node
+  linkType: soft
+
 "@rollup/plugin-babel@npm:^5.2.0":
   version: 5.3.0
   resolution: "@rollup/plugin-babel@npm:5.3.0"
@@ -3543,10 +3562,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001251, caniuse-lite@npm:^1.0.30001332":
-  version: 1.0.30001423
-  resolution: "caniuse-lite@npm:1.0.30001423"
-  checksum: fe443f323f5dc6a858ef7d7deddb93db5e5f9a35e22970c4a65c4ef793bb696c1e2f038df572722d9edf29021e43ed16f5131faafde783563bd0d9eccf486592
+"caniuse-lite@npm:^1.0.30001251":
+  version: 1.0.30001313
+  resolution: "caniuse-lite@npm:1.0.30001313"
+  checksum: 49f2dcd1fa493a09a5247dcf3a4da3b9df355131b1fc1fd08b67ae7683c300ed9b9eef6a5424b4ac7e5d1ff0e129d2a0b4adf2a6a5a04ab5c2c0b2c590e935be
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001332":
+  version: 1.0.30001344
+  resolution: "caniuse-lite@npm:1.0.30001344"
+  checksum: 9dba66f796dc98632dced4c5d487d0fad219e137a27c634eec68520f2e598a613e3371b9207e15a078689a629128eca898793e37fc98841821ab481bddad51b9
   languageName: node
   linkType: hard
 
@@ -3662,6 +3688,7 @@ __metadata:
     "@hcaptcha/react-hcaptcha": ^1.4.4
     "@insertish/vite-plugin-babel-macros": ^1.0.5
     "@preact/preset-vite": ^2.0.0
+    "@revoltchat/ui": ^1.0.77
     "@rollup/plugin-replace": ^2.4.2
     "@styled-icons/boxicons-logos": ^10.38.0
     "@styled-icons/boxicons-regular": ^10.38.0
